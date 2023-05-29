@@ -30,7 +30,7 @@
 - [Pré-requisitos](pré-requisitos)
 - [Rodando o Backend (API)](🎲-rodando-o-backend-api)
 - [Tecnologias](🥁-tecnologias)
-- [API](api-fluxo-caixa-repositório)
+- [API](api-controle-gastos-repositório)
 - [WebSite](website-repositório)
 - [Autor](🦸-autor)
 - [Licença](📝-licença)
@@ -51,7 +51,7 @@ Para os requisitos técnicos foram solicitados:
 - [x] produção do README com instruções de como subir a aplicação local ou container e para utilização dos serviços
 - [x] hospedar em repositório público do GitHub
 
-♻️ API-FLUXO-CAIXA - é uma das peças essenciais para que ferramenta de controle, lançamentos e acompanhamento das contas de uma empresa e/ou pessoa física funcionem. Os comerciantes que desejam manter as informações sobre despesas e receitas mensais agrupadas por lojas e/ou unidades e/ou empresas e/ou setores ou diferentes centros de custos, podem usar este aplicação para consumo dos dados cadastrados.
+♻️ API-CONTROLE-GASTOS - é uma das peças essenciais para que ferramenta de controle, lançamentos e acompanhamento das contas de uma empresa e/ou pessoa física funcionem. Os comerciantes que desejam manter as informações sobre despesas e receitas mensais agrupadas por lojas e/ou unidades e/ou empresas e/ou setores ou diferentes centros de custos, podem usar este aplicação para consumo dos dados cadastrados.
 
 A API do Fluxo de Caixa foi projetada e desenvolvida considerando o Padrão de Projeto Singleton, utilizando os princípios do SOLID e com a separação das classes em diferentes domínios de negócio para o isolamento de suas responsabilidades.
 
