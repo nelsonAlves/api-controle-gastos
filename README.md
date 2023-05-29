@@ -29,7 +29,6 @@
 - [Como executar o projeto](🚀-como-executar-o-projeto)
 - [Pré-requisitos](pré-requisitos)
 - [Rodando o Backend (API)](🎲-rodando-o-backend-api)
-- [Rodando a aplicação web (Frontend)](🧭-rodando-a-aplicação-web-frontend)
 - [Tecnologias](🥁-tecnologias)
 - [API](api-fluxo-caixa-repositório)
 - [WebSite](website-repositório)
