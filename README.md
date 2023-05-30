@@ -108,15 +108,11 @@ O planejamento para o desenvolvimento do sistema considerou as seguintes rotinas
 
 ## 🎟️ Layout da aplicação
 
-O layout da aplicação está disponível pelo Draw.io:
+Desenho da solução:
 
 ### API
 
-<p align="center">
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./assets/home-mobile.png" width="200px">
 
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./assets/detalhes-mobile.svg" width="200px">
-</p>
 
 ---
 
