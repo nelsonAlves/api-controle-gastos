@@ -8,15 +8,13 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
-@EnableWebSecurity
-public class WebSecurityConfig {
-
+public class SecurityConfiguration {
+	
 	@Autowired
 	private JwtUtil jwtUtil;
 
@@ -26,22 +24,18 @@ public class WebSecurityConfig {
 	@Autowired
 	private UserDetailsSecurityServer userDetailsSecurityServer;
 
-	@Bean
-	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-
-		http.headers().frameOptions().disable().and()
-				.cors().and()
-				.csrf().disable()
-				.authorizeHttpRequests((auth) -> auth
-						.requestMatchers(HttpMethod.POST, "/api/v1/usuarios").permitAll()
-						.anyRequest().authenticated())
-				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-
-		http.addFilter(new JwtAuthenticationFilter(authenticationManager(authConfig), jwtUtil));
+    @Bean
+    SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http
+            .authorizeHttpRequests((authz) -> authz
+            		.requestMatchers(HttpMethod.POST, "/api/v1/usuarios/usuarios").permitAll()
+            		.requestMatchers("/api/test/**").permitAll()
+            		.anyRequest().authenticated())
+            .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+        http.addFilter(new JwtAuthenticationFilter(authenticationManager(authConfig), jwtUtil));
 		http.addFilter(new JwtAuthorizationFilter(authenticationManager(authConfig), jwtUtil, userDetailsSecurityServer));
-
-		return http.build();
-	}
+        return http.build();
+    }
 
 	@Bean
 	AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration)
